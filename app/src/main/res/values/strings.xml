@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Hızlı Quiz</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="eklendi">Eklendi</string>
+    <string name="play">Oyna</string>
+    <string name="siralama">Sıralama</string>
+    <string name="account_settings">Ayarlar</string>
+    <string name="register">Kayıt Ol</string>
+    <string name="login_email_hint">Mail</string>
+    <string name="login_password_hint">Şifre</string>
+    <string name="signup_login_hint">Zaten bir hesabınız var mı? Giriş yapın!</string>
+    <string name="login_signup_hint">Henüz bir hesabınız yok mu? Kayıt olun!</string>
+    <string name="login">Giriş</string>
+    <string name="name">İsim</string>
+    <string name="forgot_password">Şifrenizi mi unuttunuz?</string>
+    <string name="send_repass_mail_this_mail">Şifre sıfırlama mailinin gönderileceği mail adresini giriniz.</string>
+    <string name="send_forget_mail">Sıfırla</string>
+</resources>

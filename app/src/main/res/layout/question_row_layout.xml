@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:id="@+id/cevap_text"
+        android:text="soru secenekleri "
+        android:textColor="#FFFFFF"
+        android:fontFamily="@font/proxima_nova"
+        android:textSize="14dp"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:maxLines="3"
+        android:textAllCaps="false"
+        android:background="@drawable/question_choice_shape"
+        android:shadowColor="#969696"
+        android:shadowDx="0"
+        android:layout_marginBottom="20dp"
+        android:shadowDy="0"
+        android:shadowRadius="5" />
+</RelativeLayout>

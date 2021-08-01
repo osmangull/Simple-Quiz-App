@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.dashboard.DashboardFragment">
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/kullaniciAdi"
+            android:hint="Kişi ekle"
+            android:paddingLeft="25dp"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"/>
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="150dp"
+            android:layout_below="@+id/kullaniciAdi"
+            android:id="@+id/kisiEkle"
+            android:text="Kişi Ekle"
+            android:layout_height="80dp"/>
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="150dp"
+            android:layout_alignParentEnd="true"
+            android:text="Yenile"
+            android:id="@+id/yenile"
+            android:layout_below="@+id/kullaniciAdi"
+            android:layout_height="80dp"
+            android:layout_alignParentRight="true" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_below="@+id/kisiEkle"
+        android:layout_marginTop="20dp"
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </androidx.recyclerview.widget.RecyclerView>
+    </RelativeLayout>
+</ScrollView>
+
+
+</RelativeLayout>

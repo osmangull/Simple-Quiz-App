@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:orientation="vertical"
+    android:background="#B7F5BF42"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/soru"
+        android:textColor="#fff"
+        android:background="@drawable/question_shape"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="15dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:maxLines="3"
+        android:layout_marginLeft="15dp"
+        android:fontFamily="@font/proxima_nova"
+        android:text=""
+        android:padding="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"></TextView>
+<androidx.recyclerview.widget.RecyclerView
+    android:layout_below="@+id/soru"
+    android:layout_marginTop="20dp"
+    android:id="@+id/recyclerView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"></androidx.recyclerview.widget.RecyclerView>
+
+</RelativeLayout>
