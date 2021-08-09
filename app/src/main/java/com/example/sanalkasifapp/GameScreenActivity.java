@@ -6,11 +6,14 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.ProgressDialog;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.sanalkasifapp.adapters.CevaplarAdapter;
+import com.example.sanalkasifapp.helpers.MyCountDownTimer;
 import com.example.sanalkasifapp.model.Cevaplar;
 import com.example.sanalkasifapp.model.QuizElemanlari;
 import com.example.sanalkasifapp.model.Soru;
@@ -33,6 +36,10 @@ public class GameScreenActivity extends AppCompatActivity {
     private ProgressDialog progressDialog;
     private ArrayList<QuizElemanlari> quizElemanlariArrayList;
     private int soruIndex =0;
+    private TextView timerText;
+    private CountDownTimer countDownTimer;
+    private static long countDownIntType = 90000;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,11 +47,13 @@ public class GameScreenActivity extends AppCompatActivity {
         db = FirebaseFirestore.getInstance();
         soruMetni = findViewById(R.id.soru);
         recyclerView = findViewById(R.id.recyclerView);
+        timerText = findViewById(R.id.timer);
         recyclerView.setLayoutManager(new LinearLayoutManager(GameScreenActivity.this));
         soruArrayList = new ArrayList<>();
         cevaplarArrayList = new ArrayList<>();
         progressDialog = new ProgressDialog(GameScreenActivity.this);
         progressDialog.setCancelable(false);
+
         getSorular();
     }
 
@@ -122,8 +131,15 @@ public class GameScreenActivity extends AppCompatActivity {
             adapter = new CevaplarAdapter(quizElemanlariArrayList.get(soruIndex).getCevaplarList(), new CevaplarAdapter.secenekIsaretleListener() {
                 @Override
                 public void secenekBelirle(Boolean dogruMu) {
-                    if (dogruMu)
+                    if (dogruMu) {
                         Toast.makeText(GameScreenActivity.this, "Doğru Cevap", Toast.LENGTH_SHORT).show();
+                        if (countDownTimer != null) {
+                            countDownTimer.cancel();
+                            countDownTimer = new MyCountDownTimer(timerText,countDownIntType + 5000, 1000).start();
+                        }
+/*                        countDownTimer = new MyCountDownTimer(timerText,countDownIntType + 5000, 1000) {
+                        }.start();*/
+                    }
                     else
                         Toast.makeText(GameScreenActivity.this, "Yanlış Cevap", Toast.LENGTH_SHORT).show();
                 }
@@ -131,6 +147,10 @@ public class GameScreenActivity extends AppCompatActivity {
             soruMetni.setText(quizElemanlariArrayList.get(soruIndex).getQuizSorusu());
             recyclerView.setAdapter(adapter);
             adapter.notifyDataSetChanged();
+
+            countDownTimer=new MyCountDownTimer(timerText,countDownIntType,1000)//15000 kısmı kaç ms saniye olacağını gösterir.
+            {
+            }.start();
         }
     }
 

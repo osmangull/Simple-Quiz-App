@@ -5,7 +5,22 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <TextView
+        android:id="@+id/timer"
+        android:textColor="#fff"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="15dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textSize="50dp"
+        android:layout_marginLeft="15dp"
+        android:fontFamily="@font/proxima_nova_a_bold"
+        android:text="90"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"></TextView>
+    <TextView
+        android:layout_below="@+id/timer"
         android:id="@+id/soru"
         android:textColor="#fff"
         android:background="@drawable/question_shape"
@@ -20,11 +35,12 @@
         android:padding="20dp"
         android:layout_width="match_parent"
         android:layout_height="250dp"></TextView>
-<androidx.recyclerview.widget.RecyclerView
-    android:layout_below="@+id/soru"
-    android:layout_marginTop="20dp"
-    android:id="@+id/recyclerView"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"></androidx.recyclerview.widget.RecyclerView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/soru"
+        android:layout_marginTop="20dp"></androidx.recyclerview.widget.RecyclerView>
 
 </RelativeLayout>
